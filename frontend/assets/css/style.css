@@ -1,0 +1,29 @@
+/*
+ * =============================================================================
+ * MASTER STYLESHEET — Creative IT Institute
+ * Aggregates design tokens, header, components, and footer styles.
+ * =============================================================================
+ */
+
+@import url('design-tokens.css');
+@import url('header.css');
+@import url('components.css');
+@import url('footer.css');
+
+/* Global resets & typography enhancements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  color: var(--color-text-primary, var(--color-text-contrast));
+  background-color: var(--color-surface-page, var(--color-snow));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

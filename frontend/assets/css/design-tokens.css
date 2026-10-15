@@ -1,0 +1,548 @@
+/*
+ * =============================================================================
+ * DESIGN TOKENS — DREAM IT Brand Colors
+ * Single source of truth for all CSS variables.
+ * Based on official DREAM IT logo color palette.
+ * =============================================================================
+ */
+
+:root {
+
+  /* ---------------------------------------------------------------------------
+     BRAND CORE COLORS (Primary & Accent)
+  --------------------------------------------------------------------------- */
+  --primary: #0B2046;              /* Deep Navy - Brand identity, CTAs, titles */
+  --primary-hover: #081733;        /* Darker Navy - Hover states */
+  --primary-dark: #050F1F;         /* Ultra Deep Navy - Dark sections, heavy contrast */
+  --primary-light: #E8EDF5;        /* Soft Ice Blue - Light backgrounds, badges */
+  --primary-gradient: linear-gradient(135deg, #050F1F 0%, #0B2046 100%);
+  --primary-gradient-hover: linear-gradient(135deg, #0B2046 0%, #0D2759 100%);
+
+  --accent: #FFFFFF;               /* White - High-priority CTAs, contrast */
+  --accent-hover: #F5F5F5;         /* Light Gray - Button hover states */
+
+  /* Legacy aliases for backwards compatibility */
+  --color-brand-red: #0B2046;      /* Mapped to Deep Navy */
+  --color-brand-red-hover: #081733;
+  --color-brand-orange: #FFFFFF;   /* Mapped to White */
+  --color-brand-orange-light: #E8EDF5;
+  --color-brand-navy: #0B2046;     /* Deep Navy */
+  --color-brand-navy-dark: #050F1F;
+
+  /* ---------------------------------------------------------------------------
+     SURFACES & BACKGROUNDS
+  --------------------------------------------------------------------------- */
+  --bg-body: #FFFFFF;              /* Pure White - Page body */
+  --bg-surface: #FFFFFF;           /* Card surfaces */
+  --bg-section-alt: #F7F8FA;       /* Light Gray - Alternating sections */
+  --bg-footer: #000000;            /* Pure Black - Footer background */
+
+  /* Legacy aliases */
+  --color-surface-page: #FFFFFF;
+  --color-surface-base: #FFFFFF;
+  --color-surface-subtle: #F7F8FA;
+  --color-surface-card: #FFFFFF;
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY COLORS
+  --------------------------------------------------------------------------- */
+  --text-heading: #000000;         /* Pure Black - Main headings */
+  --text-subheading: #1A1A1A;      /* Near Black - Section subheadings */
+  --text-body: #333333;            /* Dark Gray - Body paragraphs */
+  --text-muted: #666666;           /* Medium Gray - Captions, subtitles */
+  --text-inverse: #FFFFFF;         /* White text on dark backgrounds */
+
+  /* Legacy aliases */
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #666666;
+  --color-text-muted: #666666;
+  --color-text-inverse: #FFFFFF;
+  --color-category-orange: #0B2046;
+
+  /* ---------------------------------------------------------------------------
+     INTERACTIVE & BORDERS
+  --------------------------------------------------------------------------- */
+  --border-color: #E0E0E0;         /* Light Gray - Dividers, card borders */
+  --border-color-focus: #0B2046;   /* Deep Navy - Focus rings */
+  --link-color: #0B2046;           /* Deep Navy - Links */
+  --link-hover: #000000;           /* Black - Link hover */
+
+  /* Legacy aliases */
+  --color-border-subtle: #E0E0E0;
+  --color-border-card: #E0E0E0;
+  --color-border-hover: #0B2046;
+
+  /* ---------------------------------------------------------------------------
+     FOOTER SPECIFIC COLORS
+  --------------------------------------------------------------------------- */
+  --footer-text: #CCCCCC;          /* Light Gray - Footer body text */
+  --footer-link: #FFFFFF;          /* White - Footer links */
+  --footer-link-hover: #0B2046;    /* Deep Navy - Footer link hover */
+  --footer-divider: #333333;       /* Dark Gray - Footer divider lines */
+
+  /* Legacy aliases */
+  --color-footer-bg: #000000;
+  --color-footer-text: #CCCCCC;
+  --color-footer-heading: #FFFFFF;
+  --color-footer-border: #333333;
+
+  /* ---------------------------------------------------------------------------
+     STAT / MILESTONE CARD COLORS
+  --------------------------------------------------------------------------- */
+  --color-stat-blue: #0B2046;      /* Deep Navy for stats */
+  --bg-stat-blue: #E8EDF5;         /* Soft Ice Blue background */
+  --color-stat-amber: #000000;     /* Black for highlights */
+  --bg-stat-amber: #F7F8FA;        /* Light gray background */
+  --color-stat-navy: #000000;      /* Black stat text */
+  --bg-stat-surface: #F7F8FA;      /* Neutral stat background */
+
+
+
+  /* Legacy aliases */
+  --color-stat-green: #0B2046;
+  --bg-stat-green: #E8EDF5;
+  --color-stat-dark: #000000;
+  --bg-stat-cream: #F7F8FA;
+  --color-stat-cyan: #0B2046;
+  --bg-stat-cyan: #E8EDF5;
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY
+  --------------------------------------------------------------------------- */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-bengali: 'Hind Siliguri', 'Inter', sans-serif;
+
+  --font-size-xs:   12px;
+  --font-size-sm:   13.5px;
+  --font-size-base: 15px;
+  --font-size-md:   16.5px;
+  --font-size-lg:   18px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  24px;
+  --font-size-3xl:  28px;
+  --font-size-4xl:  32px;
+
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight:   1.25;
+  --line-height-base:    1.6;
+  --line-height-relaxed: 1.75;
+
+  /* ---------------------------------------------------------------------------
+     SPACING SCALE
+  --------------------------------------------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+
+  /* ---------------------------------------------------------------------------
+     BORDER RADIUS SCALE
+  --------------------------------------------------------------------------- */
+  --radius-sm:          6px;
+  --radius-md:          10px;
+  --radius-lg:          14px;
+  --radius-xl:          18px;
+  --radius-2xl:         24px;
+  --radius-section:     28px;
+  --radius-pill:        9999px;
+
+  /* ---------------------------------------------------------------------------
+     SHADOW SCALE
+  --------------------------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(11, 32, 70, 0.05);
+  --shadow-sm: 0 2px 8px -2px rgba(11, 32, 70, 0.06), 0 1px 4px -1px rgba(11, 32, 70, 0.04);
+  --shadow-md: 0 8px 20px -4px rgba(11, 32, 70, 0.08), 0 4px 10px -2px rgba(11, 32, 70, 0.04);
+  --shadow-lg: 0 16px 32px -8px rgba(11, 32, 70, 0.12);
+  --shadow-card:        0 4px 18px rgba(11, 32, 70, 0.03);
+  --shadow-card-hover:  0 10px 25px rgba(11, 32, 70, 0.08);
+
+  /* ---------------------------------------------------------------------------
+     TRANSITIONS
+  --------------------------------------------------------------------------- */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base:   250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---------------------------------------------------------------------------
+     LAYOUT
+  --------------------------------------------------------------------------- */
+  --container-max: 1280px;
+
+  /* ---------------------------------------------------------------------------
+     FOCUS
+  --------------------------------------------------------------------------- */
+  --color-focus-ring: rgba(11, 32, 70, 0.4);
+
+  /* ---------------------------------------------------------------------------
+     EXTENDED COLOR PALETTE
+  --------------------------------------------------------------------------- */
+
+  /* Additional Grays & Neutrals */
+  --color-gray-50: #F7F8FA;
+  --color-gray-100: #F0F0F0;
+  --color-gray-200: #E0E0E0;
+  --color-gray-300: #CCCCCC;
+  --color-gray-400: #999999;
+  --color-gray-500: #666666;
+  --color-gray-600: #4D4D4D;
+  --color-gray-700: #333333;
+  --color-gray-800: #1A1A1A;
+  --color-gray-900: #000000;
+  --color-gray-950: #000000;
+
+  /* Dark UI Colors */
+  --color-slate-navy: #000000;
+  --color-slate-dark: #1A1A1A;
+  --color-charcoal: #111111;
+  --color-charcoal-light: #1F1F1F;
+  --color-charcoal-muted: #333333;
+
+  /* Light Backgrounds */
+  --color-ice-blue: #E8EDF5;
+  --color-cream: #F7F8FA;
+  --color-soft-gray: #F0F0F0;
+  --color-whisper: #F7F8FA;
+  --color-snow: #FAFAFA;
+  --color-paper: #F5F5F5;
+  --color-frost: #F2F2F2;
+
+  /* Semantic Colors */
+  --color-success: #10B981;
+  --color-success-light: #D1FAE5;
+  --color-success-bg: #DCFCE7;
+  --color-success-dark: #166534;
+  --color-success-border: #BBF7D0;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+  --color-error: #EF4444;
+  --color-error-light: #FEE2E2;
+  --color-info: #0B2046;
+  --color-info-light: #E8EDF5;
+
+  /* Overlay & Shadow Colors */
+  --color-overlay-light: rgba(0, 0, 0, 0.1);
+  --color-overlay-medium: rgba(0, 0, 0, 0.3);
+  --color-overlay-dark: rgba(0, 0, 0, 0.65);
+  --color-overlay-darker: rgba(0, 0, 0, 0.78);
+  --color-white-overlay: rgba(255, 255, 255, 0.15);
+  --color-white-overlay-medium: rgba(255, 255, 255, 0.3);
+  --color-white-overlay-strong: rgba(255, 255, 255, 0.95);
+
+  /* Primary Color Variations */
+  --color-primary-light: #E8EDF5;
+  --color-primary-shadow: rgba(11, 32, 70, 0.1);
+  --color-primary-shadow-md: rgba(11, 32, 70, 0.28);
+  --color-primary-shadow-lg: rgba(11, 32, 70, 0.38);
+  --color-primary-glow: rgba(11, 32, 70, 0.25);
+  --color-primary-glow-strong: rgba(11, 32, 70, 0.35);
+
+  /* Text Colors - Extended */
+  --color-text-white: #FFFFFF;
+  --color-text-gray-light: #CCCCCC;
+  --color-text-contrast: #000000;
+
+  /* Border Colors - Extended */
+  --color-border-light: #F0F0F0;
+  --color-border-paper: #F5F5F5;
+  --color-border-frost: #F2F2F2;
+  --color-border-white-subtle: rgba(255, 255, 255, 0.15);
+  --color-border-white-medium: rgba(255, 255, 255, 0.25);
+
+  /* Gradient Stop Colors */
+  --gradient-overlay-start: rgba(0, 0, 0, 0.1);
+  --gradient-overlay-end: rgba(0, 0, 0, 0.65);
+  --gradient-overlay-hover-start: rgba(0, 0, 0, 0.2);
+  --gradient-overlay-hover-end: rgba(0, 0, 0, 0.75);
+  --gradient-bottom-start: rgba(0, 0, 0, 0.8);
+
+  /* Shadow RGBA Values for various contexts */
+  --shadow-dark-subtle: rgba(0, 0, 0, 0.04);
+  --shadow-dark-light: rgba(0, 0, 0, 0.06);
+  --shadow-dark-medium: rgba(0, 0, 0, 0.08);
+  --shadow-dark-medium-alt: rgba(0, 0, 0, 0.09);
+  --shadow-dark-strong: rgba(0, 0, 0, 0.12);
+  --shadow-dark-banner: rgba(11, 28, 61, 0.15);
+  --shadow-dark-banner-hover: rgba(11, 28, 61, 0.22);
+  --shadow-dark-heavy: rgba(0, 0, 0, 0.2);
+  --shadow-dark-intense: rgba(0, 0, 0, 0.22);
+  --shadow-dark-modal: rgba(0, 0, 0, 0.3);
+  --shadow-dark-modal-heavy: rgba(0, 0, 0, 0.5);
+  --shadow-dark-deep: rgba(0, 0, 0, 0.6);
+  --shadow-gray: rgba(16, 24, 40, 0.08);
+  --shadow-white-glow: rgba(255, 255, 255, 0.2);
+  --shadow-white-glow-medium: rgba(255, 255, 255, 0.28);
+  --shadow-accent: rgba(234, 88, 12, 0.2);
+}
+
+/* =============================================================================
+   CSS RESET & BASE
+============================================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-page);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* =============================================================================
+   LAYOUT UTILITIES
+============================================================================= */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 28px);
+}
+
+/* Alias used across original pages */
+.c-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 28px);
+}
+
+/* =============================================================================
+   PAGE LAYOUT UTILITIES — consistent spacing across all inner pages
+============================================================================= */
+
+/* Standard top padding for every page's first content section (below the header).
+   Applied via class="page-hero" on the first <header>/<section> inside <main>.
+   Keeps top margin identical on: FAQ, Contact, Gallery, Privacy, Sitemap,
+   About, Success Stories, Course Detail. */
+.page-hero {
+  padding-top:    clamp(36px, 5vw, 56px);
+  padding-bottom: clamp(20px, 3vw, 32px);
+}
+
+/* Full-page content wrapper — used on all inner pages via <main class="container page-main"> */
+.page-main {
+  padding-top:    clamp(36px, 5vw, 56px);
+  padding-bottom: clamp(48px, 7vw, 80px);
+}
+
+
+/* =============================================================================
+   DREAM IT BRAND - BUTTON STYLES
+============================================================================= */
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--text-inverse);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 26px;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-accent:hover {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  padding: 11px 28px;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-frost);
+  color: var(--primary-hover);
+}
+
+/* =============================================================================
+   LINK STYLES
+============================================================================= */
+
+a {
+  color: var(--link-color);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* =============================================================================
+   FOOTER STYLES
+============================================================================= */
+
+footer {
+  background-color: var(--bg-footer);
+  color: var(--footer-text);
+}
+
+footer h2,
+footer h3,
+footer h4,
+footer h5 {
+  color: var(--color-footer-heading);
+}
+
+footer a {
+  color: var(--footer-link);
+  transition: color var(--transition-fast);
+}
+
+footer a:hover {
+  color: var(--footer-link-hover);
+}
+
+/* =============================================================================
+   HEADING STYLES
+============================================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+============================================================================= */
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-heading {
+  color: var(--text-heading);
+}
+
+.text-body {
+  color: var(--text-body);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-surface-alt {
+  background-color: var(--bg-section-alt);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}

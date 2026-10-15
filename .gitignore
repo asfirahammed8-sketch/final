@@ -1,0 +1,161 @@
+# ====================================================================================================
+# DreamIT Platform - Git Ignore Configuration
+# ====================================================================================================
+# Prevents sensitive files from being committed to Git
+
+# ====================================================================================================
+# 🔐 SECURITY & CREDENTIALS (NEVER COMMIT!)
+# ====================================================================================================
+
+# Environment variables (contains all passwords and secrets)
+.env
+.env.local
+.env.*.local
+.env.backup
+
+# IMPORTANT: config/email.php and config/database.php are NOT gitignored
+# because they now load from .env (they contain no hardcoded passwords)
+# Only .env file contains actual credentials and is gitignored above
+
+# ====================================================================================================
+# 💾 XAMPP Configuration Files (LOCAL ONLY)
+# ====================================================================================================
+
+# XAMPP ini files contain local paths and credentials
+C:/xampp/php/php.ini
+C:/xampp/sendmail/sendmail.ini
+
+# ====================================================================================================
+# 📝 Logs & Temporary Files
+# ====================================================================================================
+
+# Error logs
+*.log
+logs/
+error.log
+sendmail.log
+
+# Session files
+sessions/
+tmp/
+temp/
+
+# Cache
+cache/
+*.cache
+
+# ====================================================================================================
+# 🗄️ Database
+# ====================================================================================================
+
+# Database dumps (may contain sensitive data)
+*.sql
+database/backups/*.sql
+database/dumps/*.sql
+
+# EXCEPTION: Keep migration files
+!database/migrations/*.sql
+!database/schema.sql
+
+# ====================================================================================================
+# 📦 Dependencies & Build Files
+# ====================================================================================================
+
+# Node modules (if using npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Composer (if using PHP Composer)
+vendor/
+composer.lock
+
+# ====================================================================================================
+# 🖼️ Uploads & User Content
+# ====================================================================================================
+
+# User uploaded files (large files shouldn't be in Git)
+uploads/
+uploads/*
+!uploads/.htaccess
+!uploads/README.md
+
+# Gallery images
+gallery/images/*
+!gallery/images/.gitkeep
+
+# ====================================================================================================
+# 🔧 IDE & Editor Files
+# ====================================================================================================
+
+# VS Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# PhpStorm / IntelliJ IDEA
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Visual Studio
+.vs/
+
+# ====================================================================================================
+# 🖥️ Operating System Files
+# ====================================================================================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# ====================================================================================================
+# 📄 Documentation (Optional - Remove if you want to commit docs)
+# ====================================================================================================
+
+# Development notes (may contain sensitive info)
+NOTES.md
+TODO.md
+PRIVATE_*.md
+
+# Test files
+test-email.php
+check-smtp.php
+phpinfo-check.php
+check-2fa-column.php
+
+# ====================================================================================================
+# 🎯 Project-Specific
+# ====================================================================================================
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# ====================================================================================================
+# END OF .gitignore
+# ====================================================================================================

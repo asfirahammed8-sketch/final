@@ -1,0 +1,114 @@
+{
+  "site": {
+    "name": "Creative IT Institute",
+    "tagline": "Become an IT Pro & Rule the Digital World",
+    "founded": 2008,
+    "iso_certification": "ISO 9001:2015",
+    "legal": {
+      "etin": "570007703094",
+      "trade_license": "TRAD/DSCC/228155/2019",
+      "copyright_year": 2026
+    },
+    "logo": {
+      "type": "inline-svg",
+      "description": "Arc path + circle, both in #c92127 brand red",
+      "text_line_1": "CREATIVE",
+      "text_line_2": "IT INSTITUTE"
+    }
+  },
+
+  "contact": {
+    "head_office": {
+      "name": "Dhanmondi Campus (Head Office)",
+      "address_line_1": "Momtaz Plaza (4th Floor)",
+      "address_line_2": "House # 07, Road # 04",
+      "city": "Dhanmondi",
+      "postal_code": "Dhaka-1205",
+      "country": "Bangladesh"
+    },
+    "phones": [
+      "+880 1777308777",
+      "+880 1624666000",
+      "+880 1624888444",
+      "+880 1966177177",
+      "+880 1625555444",
+      "+880 1990779900"
+    ],
+    "email": "info@creativeitinstitute.com",
+    "campus_hours": "Saturday – Thursday: 9 AM – 8 PM",
+    "google_maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.2285141561085!2d90.3789069!3d23.7397734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b7a55cd36f%3A0xfcc5b021f3887396!2sCreative%20IT%20Institute!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd",
+    "branches": [
+      "Dhanmondi (Head Office)",
+      "Uttara Branch",
+      "Mirpur Branch",
+      "Chattogram Branch"
+    ]
+  },
+
+  "social_media": {
+    "facebook":  "https://facebook.com",
+    "linkedin":  "https://linkedin.com",
+    "youtube":   "https://youtube.com",
+    "instagram": "https://instagram.com",
+    "note": "NEEDS REVIEW — actual account URLs not present in source files. All links point to root domains only."
+  },
+
+  "payment_merchants": [
+    {
+      "name": "bKash",
+      "logo_url": "https://images.seeklogo.com/logo-png/38/1/bkash-logo-png_seeklogo-382709.png",
+      "account_numbers": ["01990779766", "01309014614"]
+    },
+    {
+      "name": "Nagad",
+      "logo_url": "https://images.seeklogo.com/logo-png/35/1/nagad-logo-png_seeklogo-355240.png",
+      "account_numbers": ["01309014614"]
+    },
+    {
+      "name": "DBBL Rocket",
+      "logo_url": "https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png",
+      "account_numbers": ["013090146143"]
+    },
+    {
+      "name": "SSLCOMMERZ",
+      "logo_url": "https://images.seeklogo.com/logo-png/42/1/sslcommerz-logo-png_seeklogo-420286.png",
+      "account_numbers": []
+    }
+  ],
+
+  "key_stats": {
+    "successful_students": "50,000+",
+    "expert_freelancers":  "34,000+",
+    "job_placements":      "42,000+",
+    "industry_experts":    "600+",
+    "success_rate":        "89%",
+    "partner_companies":   "3,000+"
+  },
+
+  "footer": {
+    "cta_title": "Admission Is Going on",
+    "cta_description": "Enroll to any online or offline course now, take one step ahead towards a competent career",
+    "cta_buttons": [
+      { "label": "Browse Course", "url": "/courses" },
+      { "label": "Contact Us",    "url": "/contact" }
+    ],
+    "quick_links": [
+      { "label": "Success Story",  "url": "/success-stories" },
+      { "label": "Our Gallery",    "url": "/gallery" },
+      { "label": "FAQ",            "url": "/faq" },
+      { "label": "About Us",       "url": "/about" },
+      { "label": "Contact",        "url": "/contact" },
+      { "label": "Privacy Policy", "url": "/privacy-policy" },
+      { "label": "Sitemap",        "url": "/sitemap" }
+    ],
+    "popular_course_links": [
+      "Professional Graphic Design",
+      "Motion Graphics & VFX",
+      "Professional UX/UI Design",
+      "MERN Stack Development",
+      "Digital Marketing",
+      "Professional 3D Animation",
+      "Web Development"
+    ]
+  }
+}

@@ -1,0 +1,400 @@
+/*
+ * =============================================================================
+ * PROJECT DETAIL PAGE — New UI/UX
+ * Gig-style multi-image carousel with side-by-side slides, contain images,
+ * outside arrows, and thumbnail strip
+ * Depends on design-tokens.css
+ * =============================================================================
+ */
+
+/* ============================================================================
+   PAGE WRAPPER
+============================================================================ */
+#mainContent {
+  padding: 36px 0 70px;
+}
+
+/* ============================================================================
+   TOP ACTION BAR
+============================================================================ */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary, #0B2046);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--primary-light, #E8EDF5);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-btn:hover {
+  background: var(--primary, #0B2046);
+  color: #ffffff;
+  transform: translateX(-2px);
+}
+
+.student-creator-tag {
+  font-size: 14px;
+  color: var(--text-muted, #666666);
+}
+
+.student-creator-tag strong {
+  color: var(--text-heading, #000000);
+  font-weight: 700;
+}
+
+/* ============================================================================
+   CAROUSEL WRAPPER
+   Extra horizontal padding so the -14px outside arrows don't get clipped
+============================================================================ */
+.product-carousel {
+  width: 100%;
+  margin-bottom: 32px;
+  position: relative;
+  /* Give room for the arrows that sit outside the viewport box */
+  padding: 0 20px;
+}
+
+/* ============================================================================
+   MAIN VIEWPORT WINDOW
+   Light grey background + inner padding so each slide floats on a surface
+============================================================================ */
+.carousel-main-viewport {
+  position: relative;
+  width: 100%;
+  height: clamp(400px, 58vh, 580px);
+  background: #F7F8FA;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(11, 32, 70, 0.08);
+  border: 1px solid #E0E0E0;
+  padding: 14px;               /* inner padding — slides float inside */
+}
+
+/* ============================================================================
+   CAROUSEL TRACK
+   Holds all slides in a horizontal row; gap between visible slides
+============================================================================ */
+.carousel-track {
+  display: flex;
+  height: 100%;
+  gap: 16px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* ============================================================================
+   INDIVIDUAL SLIDE
+   Desktop: 2 visible at once (calc(50% - 8px) because gap is 16px total / 2)
+   Mobile:  1 visible at once (100%)
+============================================================================ */
+.carousel-slide {
+  flex: 0 0 calc(50% - 8px);    /* 2 slides visible on desktop */
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;           /* show full artwork — no cropping */
+  display: block;
+  border-radius: 8px;
+  filter: none !important;
+  opacity: 1 !important;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover img {
+  transform: scale(1.02);
+}
+
+/* Mobile: 1 slide at a time */
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex: 0 0 100%;
+  }
+}
+
+/* ============================================================================
+   NAVIGATION ARROWS
+   Sit OUTSIDE the viewport on desktop; fall inside on small screens
+============================================================================ */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary, #0B2046);
+  border: 1.5px solid #E0E0E0;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(11, 32, 70, 0.12);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.nav-arrow:hover {
+  background: var(--primary, #0B2046);
+  color: #ffffff;
+  border-color: var(--primary, #0B2046);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Outside position on desktop */
+.nav-arrow.prev { left: -14px; }
+.nav-arrow.next { right: -14px; }
+
+/* Fall inside on smaller screens where -14px would get clipped */
+@media (max-width: 992px) {
+  .nav-arrow.prev { left: 10px; }
+  .nav-arrow.next { right: 10px; }
+}
+
+@media (max-width: 480px) {
+  .nav-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================================
+   THUMBNAIL STRIP
+   Auto-fit grid, each thumb 76px tall, contain image inside padded cell
+============================================================================ */
+.sub-images-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.sub-image-item {
+  position: relative;
+  height: 76px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #E0E0E0;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(11, 32, 70, 0.05);
+}
+
+.sub-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;            /* show full thumb without cropping */
+  display: block;
+  border-radius: 4px;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.sub-image-item:hover {
+  border-color: var(--primary-light, #E8EDF5);
+  transform: translateY(-2px);
+}
+
+.sub-image-item.active {
+  border-color: var(--primary, #0B2046);
+  box-shadow: 0 0 0 2px rgba(11, 32, 70, 0.20);
+}
+
+@media (max-width: 600px) {
+  .sub-images-strip {
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+    gap: 10px;
+  }
+  .sub-image-item {
+    height: 60px;
+  }
+}
+
+/* ============================================================================
+   PROJECT INFO BOX
+============================================================================ */
+.project-info-box {
+  background: #ffffff;
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 4px 12px rgba(11, 32, 70, 0.05);
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.project-heading {
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.2;
+  flex: 1;
+  min-width: 200px;
+}
+
+.category-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary, #0B2046);
+  background: var(--primary-light, #E8EDF5);
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.brief-description {
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ============================================================================
+   META FOOTER ROW
+============================================================================ */
+.meta-footer-row {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #E0E0E0;
+  padding-top: 20px;
+}
+
+.student-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary, #0B2046);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.student-title-sub {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.3;
+}
+
+.student-course-sub {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+.tools-used {
+  font-size: 14px;
+  color: #666666;
+}
+
+.tools-used strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   RESPONSIVE
+============================================================================ */
+@media (max-width: 768px) {
+  #mainContent {
+    padding: 24px 0 50px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-carousel {
+    padding: 0 8px;          /* reduce side padding on mobile */
+  }
+
+  .carousel-main-viewport {
+    height: clamp(300px, 52vh, 460px);
+    padding: 10px;
+  }
+
+  .info-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta-footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-main-viewport {
+    height: 280px;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  .product-carousel {
+    padding: 0 4px;
+  }
+
+  .project-info-box {
+    padding: 20px;
+  }
+
+  .project-heading {
+    font-size: 22px;
+  }
+}

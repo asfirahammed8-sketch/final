@@ -1,0 +1,300 @@
+/*
+ * =============================================================================
+ * FOOTER — DREAM IT Brand
+ * Global footer: CTA band, 4-column nav, payment merchants, sub-footer bar.
+ * Uses professional color palette: Deep Navy (#0B2046), White (#FFFFFF), and Black
+ * Depends on design-tokens.css
+ * =============================================================================
+ */
+
+/* =============================================================================
+   WRAPPER
+============================================================================= */
+.site-footer-wrapper {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  position: relative;
+  overflow: hidden;
+}
+
+/* =============================================================================
+   ADMISSION CTA BAND (top of footer)
+============================================================================= */
+.admission-cta-box {
+  padding: clamp(50px, 8vw, 70px) 16px;
+  position: relative;
+}
+
+/* New flex layout for side-by-side content */
+.admission-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 48px);
+  flex-wrap: wrap;
+}
+
+.admission-text-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.admission-title {
+  font-size: clamp(1.85rem, 3.8vw, 3.1rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-inverse);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+.admission-desc {
+  font-size: clamp(14px, 1.6vw, 15.5px);
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  text-align: left;
+  margin: 0;
+}
+.admission-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .admission-cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .admission-text-block {
+    min-width: 100%;
+  }
+  .admission-title {
+    text-align: center;
+  }
+  .admission-desc {
+    text-align: center;
+  }
+  .admission-btn-group {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =============================================================================
+   4-COLUMN NAVIGATION LINKS
+============================================================================= */
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(28px, 4vw, 40px);
+  padding: clamp(36px, 5vw, 50px) 0 clamp(48px, 7vw, 80px);
+  border-top: 1px solid var(--color-footer-border);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-nav-grid > div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* First column (Contact) - centered */
+.footer-nav-grid > div:first-child {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-col-title {
+  font-size: 17px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-inverse);
+  margin-bottom: clamp(16px, 2vw, 24px);
+  text-align: center;
+}
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  text-align: center;
+}
+.footer-link {
+  font-size: 14px;
+  color: var(--color-footer-text);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+.footer-link:hover {
+  color: var(--color-footer-text); /* Keep same color on hover */
+  text-decoration: none;
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Contact column rows — centered block with readable alignment */
+.contact-item-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-icon-pill {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-white-overlay, rgba(255, 255, 255, 0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-inverse);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.contact-icon-pill svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* =============================================================================
+   PAYMENT MERCHANTS SECTION (white band)
+============================================================================= */
+.merchants-wrapper-section {
+  background-color: #ffffff;
+  padding: clamp(36px, 5vw, 55px) 0 clamp(40px, 6vw, 65px);
+  text-align: center;
+}
+.merchants-title {
+  font-size: clamp(17px, 2.2vw, 20px);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  margin-bottom: clamp(24px, 3.5vw, 36px);
+}
+.merchants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+}
+
+/* =============================================================================
+   SUB-FOOTER BAR (copyright + social)
+============================================================================= */
+.sub-footer-bar {
+  background-color: #ffffff;
+  border-top: 1px solid var(--color-border-light);
+  padding: 24px 0;
+}
+.sub-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Logo lockup */
+.sub-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--primary);
+}
+.sub-footer-logo img {
+  height: 36px;
+  max-width: 180px;
+  object-fit: contain;
+}
+.sub-footer-logo svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+.sub-footer-logo-text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary);
+  line-height: 1.1;
+}
+.sub-footer-logo-text span {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-charcoal-muted);
+  letter-spacing: 1px;
+}
+
+/* Copyright text */
+.sub-footer-copy {
+  font-size: 13px;
+  color: var(--color-gray-500);
+  text-align: center;
+  line-height: 1.5;
+}
+.sub-footer-copy a {
+  color: var(--primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+.sub-footer-copy a:hover {
+  color: var(--primary-hover);
+}
+
+/* Social icons */
+.social-icons-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--color-charcoal-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease;
+  text-decoration: none;
+}
+.social-icon-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-primary-shadow);
+}
+.social-icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* =============================================================================
+   RESPONSIVE
+============================================================================= */
+@media (max-width: 1120px) {
+  .footer-nav-grid  { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .merchants-grid   { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .footer-nav-grid  { grid-template-columns: 1fr; gap: 32px; }
+  .merchants-grid   { grid-template-columns: 1fr; }
+  .sub-footer-inner { flex-direction: column; text-align: center; gap: 16px; }
+  .social-icons-group { justify-content: center; }
+}
