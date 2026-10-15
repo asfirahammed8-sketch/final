@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "question": "What makes Creative IT Institute different from other IT training institutes?",
+    "answer": "Creative IT Institute has been empowering young talent since 2008 with practical, industry-aligned curriculums, 24/7 dedicated mentor support, high-end computer lab facilities, and lifelong career placement support. Our courses are recognized both nationally and internationally with ISO 9001:2015 certification.",
+    "is_active": true,
+    "sort_order": 1
+  },
+  {
+    "id": 2,
+    "question": "What types of courses and training programs are available?",
+    "answer": "We offer over 30 high-demand tech courses across Graphic & Multimedia, Web & Software Development, Digital Marketing, 3D Animation & VFX, Cyber Security, Cloud Computing, and 1-Year Professional Diploma certifications.",
+    "is_active": true,
+    "sort_order": 2
+  },
+  {
+    "id": 3,
+    "question": "Can I attend classes online or is offline campus attendance required?",
+    "answer": "Both options are fully supported. You can attend offline practical classes at our modern campuses in Dhanmondi, Uttara, Mirpur, or Chattogram, or join interactive live online batches from anywhere in the world.",
+    "is_active": true,
+    "sort_order": 3
+  },
+  {
+    "id": 4,
+    "question": "Is an installment (EMI) facility available for course fees?",
+    "answer": "Yes, flexible installment plans are provided for all programs. In addition, 0% interest EMI facilities ranging from 3 to 12 months are accessible via major supported credit cards.",
+    "is_active": true,
+    "sort_order": 4
+  },
+  {
+    "id": 5,
+    "question": "Will I receive an internationally recognized certificate after completion?",
+    "answer": "Yes, upon successfully submitting your coursework and completing your final capstone project, you receive an authentic ISO 9001:2015 certified certificate with a verifiable online serial ID.",
+    "is_active": true,
+    "sort_order": 5
+  },
+  {
+    "id": 6,
+    "question": "Can students practice in the computer labs outside class hours?",
+    "answer": "Yes! Our high-end workstation labs are open throughout the day for students. You can practice your practical lessons before or after classes with dedicated lab mentors available for guidance.",
+    "is_active": true,
+    "sort_order": 6
+  },
+  {
+    "id": 7,
+    "question": "How does the institute support students with freelancing and marketplaces?",
+    "answer": "Every curriculum includes hands-on freelancing modules covering Upwork, Fiverr, professional portfolio curation, profile ranking, effective proposal writing, and direct client negotiation.",
+    "is_active": true,
+    "sort_order": 7
+  },
+  {
+    "id": 8,
+    "question": "What happens if I miss a scheduled class?",
+    "answer": "Every class session is recorded and promptly uploaded to your student dashboard. Furthermore, you can schedule dedicated one-on-one recovery sessions with our mentors to catch up.",
+    "is_active": true,
+    "sort_order": 8
+  },
+  {
+    "id": 9,
+    "question": "Can I attend a free seminar before formal admission?",
+    "answer": "Yes, we organize free career counseling workshops and department seminars weekly. You can conveniently book your seminar slot on our website at no cost.",
+    "is_active": true,
+    "sort_order": 9
+  },
+  {
+    "id": 10,
+    "question": "How do students communicate directly with mentors during the course?",
+    "answer": "Each batch is assigned a dedicated Discord server, private discussion forum, and active helpdesk where instructors deliver real-time feedback, code reviews, and screen-sharing troubleshooting.",
+    "is_active": true,
+    "sort_order": 10
+  },
+  {
+    "id": 11,
+    "question": "What educational background or prerequisites are required to enroll?",
+    "answer": "Most foundational courses require basic computer literacy and genuine dedication. For advanced diploma or specialized software engineering tracks, an HSC or equivalent background is recommended.",
+    "is_active": true,
+    "sort_order": 11
+  },
+  {
+    "id": 12,
+    "question": "What is included in \"Lifetime Support\" after course completion?",
+    "answer": "Our graduates retain continuous access to on-campus lab facilities, career placement recommendations, updated curriculum resources, and mentor consultation for live marketplace client tasks.",
+    "is_active": true,
+    "sort_order": 12
+  },
+  {
+    "id": 13,
+    "question": "Are internship and corporate job placement opportunities provided?",
+    "answer": "Yes, our specialized Career Placement Department partners with hundreds of reputable IT organizations, software agencies, and corporate institutions to connect top graduates with direct interviews.",
+    "is_active": true,
+    "sort_order": 13
+  },
+  {
+    "id": 14,
+    "question": "What documents are necessary to complete registration?",
+    "answer": "Applicants should provide one passport-sized color photograph, a photocopy of their National ID (NID) or Birth Certificate, and basic academic details when filling out the admission form.",
+    "is_active": true,
+    "sort_order": 14
+  },
+  {
+    "id": 15,
+    "question": "What payment methods are supported for tuition fees?",
+    "answer": "We accept bKash, Nagad, DBBL Rocket, Visa, MasterCard, direct bank transfers, and encrypted digital checkouts via SSLCOMMERZ with automated receipts generated instantly.",
+    "is_active": true,
+    "sort_order": 15
+  },
+  {
+    "id": 16,
+    "question": "Is having a personal laptop or desktop computer mandatory?",
+    "answer": "While our high-spec campus labs are freely available for classes and daily practice, owning a standard computer at home is strongly advised to maintain consistent practice and complete assignments.",
+    "is_active": true,
+    "sort_order": 16
+  },
+  {
+    "id": 17,
+    "question": "How is the teaching quality of live online batches ensured?",
+    "answer": "Online batches are conducted live using premium studio hardware, facilitating real-time verbal dialogue, dynamic screen sharing, interactive coding/design demonstrations, and direct feedback.",
+    "is_active": true,
+    "sort_order": 17
+  },
+  {
+    "id": 18,
+    "question": "Do students develop real-world client and capstone projects?",
+    "answer": "Yes, our pedagogical framework is entirely project-oriented. Each student produces 3 to 5 industry-grade portfolio pieces that demonstrate authentic capability to global buyers and employers.",
+    "is_active": true,
+    "sort_order": 18
+  },
+  {
+    "id": 19,
+    "question": "Are there any hidden software licensing or exam fees?",
+    "answer": "No, there are zero hidden expenses. All software installation guidelines, course resources, lab support, mentor sessions, and certificate processing are fully included in the transparent course fee.",
+    "is_active": true,
+    "sort_order": 19
+  },
+  {
+    "id": 20,
+    "question": "Can employers verify issued student certificates online?",
+    "answer": "Yes, every official credential contains an individualized ID and QR code. Employers can input the credential number on our online verification portal to authenticate records instantly.",
+    "is_active": true,
+    "sort_order": 20
+  }
+]

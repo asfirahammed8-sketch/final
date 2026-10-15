@@ -1,0 +1,182 @@
+# ==============================================================================
+# DreamIT Apache Configuration — URL Rewrites, Security, Caching, Compression
+# Creative IT Institute
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Rewrite Engine
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Auto-detects directory path on live production cPanel or localhost subfolder
+    # (Do NOT hardcode RewriteBase /dreamit/ so it works seamlessly at root domain in production)
+    # RewriteBase /
+
+    # ------------------------------------------------------------------
+    # SECURITY: Block direct access to sensitive files and directories
+    # ------------------------------------------------------------------
+    RewriteRule ^(\.env|\.git|composer\.json|composer\.lock) - [F,L,NC]
+    RewriteRule ^database/.*\.(sql|lock|php)$ - [F,L,NC]
+    RewriteRule ^config/.*\.php$ - [F,L,NC]
+    RewriteRule ^storage/ - [F,L,NC]
+    RewriteRule ^includes/ - [F,L,NC]
+    RewriteRule ^archive/ - [F,L,NC]
+
+    # ------------------------------------------------------------------
+    # Clean URL Rewrites for Public Pages
+    # ------------------------------------------------------------------
+    # Skip rewriting for real files and directories (CSS, JS, images, etc.)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^courses/?$                                                                                     courses.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^courses/(graphic-design|web-development|digital-marketing|3d-animation|diploma-courses|cyber-security|graphic|web|digital|animation|diploma|cyber)/?$  courses.php?dept=$1 [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^courses/([a-zA-Z0-9_-]+)/?$                                                                   course-detail.php?slug=$1 [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^projects/?$                                                                                    projects.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^projects/([a-zA-Z0-9_-]+)/?$                                                                  project-detail.php?slug=$1 [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^about/?$                                                                                       about.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^success-stories/?$                                                                             success-stories.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^gallery/?$                                                                                     gallery.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^faq/?$                                                                                         faq.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^contact/?$                                                                                     contact.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^privacy/?$                                                                                     privacy.php [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^sitemap/?$                                                                                     sitemap.php [L,QSA]
+
+    RewriteRule ^sitemap\.xml$                                                                                  sitemap-xml.php [L]
+    RewriteRule ^robots\.txt$                                                                                   robots-txt.php [L]
+
+    # ------------------------------------------------------------------
+    # Admin Panel Private Slug & Admin Console Routing
+    # ------------------------------------------------------------------
+    # Admin console root (no slug path after it)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(cpanel-dreamit|admin)/?$ admin/index.php [L,QSA]
+
+    # Admin console sub-routes — ONLY when the path is NOT a real file/dir
+    # This ensures admin/assets/css/*.css and admin/assets/js/*.js are served directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(cpanel-dreamit|admin)/(.*)$ admin/index.php?route=$2 [L,QSA]
+
+    # API Admin Router Rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^api/admin/(.*)$  api/admin/index.php [L,QSA]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# Security Headers
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options   "nosniff"
+    Header always set X-Frame-Options          "SAMEORIGIN"
+    Header always set X-XSS-Protection         "1; mode=block"
+    Header always set Referrer-Policy          "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy       "geolocation=(), microphone=(), camera=()"
+
+    # Remove server signature headers
+    Header always unset X-Powered-By
+    Header always unset Server
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# Gzip / Deflate Compression
+# Reduces transferred bytes for text assets by 60-80%.
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf font/woff font/woff2
+    # Don't compress already-compressed formats
+    SetEnvIfNoCase Request_URI \.(gz|bz2|zip|rar|7z|jpg|jpeg|png|gif|webp|avif|mp4|mp3|ogg|pdf)$ no-gzip dont-vary
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# Browser Caching — Expire Headers
+# Static assets are versioned by filename; long cache is safe.
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML — short cache so users get fresh content
+    ExpiresByType text/html                 "access plus 1 hour"
+    # CSS & JS
+    ExpiresByType text/css                  "access plus 1 year"
+    ExpiresByType application/javascript    "access plus 1 year"
+    ExpiresByType text/javascript           "access plus 1 year"
+    # Images
+    ExpiresByType image/jpeg                "access plus 1 year"
+    ExpiresByType image/png                 "access plus 1 year"
+    ExpiresByType image/webp                "access plus 1 year"
+    ExpiresByType image/avif                "access plus 1 year"
+    ExpiresByType image/svg+xml             "access plus 1 year"
+    ExpiresByType image/gif                 "access plus 1 year"
+    ExpiresByType image/x-icon              "access plus 1 year"
+    # Fonts
+    ExpiresByType font/ttf                  "access plus 1 year"
+    ExpiresByType font/otf                  "access plus 1 year"
+    ExpiresByType font/woff                 "access plus 1 year"
+    ExpiresByType font/woff2                "access plus 1 year"
+    ExpiresByType application/font-woff     "access plus 1 year"
+    ExpiresByType application/font-woff2    "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Add Cache-Control headers for static assets
+    <FilesMatch "\.(css|js|svg|ico|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+    # Never cache API and PHP responses
+    <FilesMatch "\.php$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# Custom 404 Error Handler
+# ------------------------------------------------------------------------------
+ErrorDocument 404 /dreamit/404.php
+
+# ------------------------------------------------------------------------------
+# Prevent directory listing
+# ------------------------------------------------------------------------------
+Options -Indexes
