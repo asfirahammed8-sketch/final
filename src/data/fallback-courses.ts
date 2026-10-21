@@ -1,0 +1,36 @@
+import { CourseCardContract, CourseDetailContract } from '../contracts/course.contract';
+
+export const fallbackCourses: (CourseCardContract & Omit<CourseDetailContract, "thumbnail">)[] = [
+  {
+    "title": "Mastering React & TypeScript",
+    "slug": "mastering-react-typescript",
+    "thumbnail": "https://example.com/react-ts.jpg",
+    "short_description": "Learn React 18 and TypeScript from scratch.",
+    "duration": "40 Hours",
+    "rating": "4.9",
+    "original_price": "199",
+    "discount_price": "99",
+    "category": "Development",
+    "overview": "This is a comprehensive course mapping core React patterns with TypeScript static types.",
+    "syllabus": "Module 1: Intro, Module 2: State, Module 3: Hooks, Module 4: TypeScript integration.",
+    "instructor": "John Doe",
+    "student_limit": "100",
+    "pdf_url": "https://example.com/syllabus-react-ts.pdf"
+  },
+  {
+    "title": "Advanced WordPress Plugin Architecture",
+    "slug": "advanced-wordpress-plugins",
+    "thumbnail": "https://example.com/wp-plugin.jpg",
+    "short_description": "Build high performance and clean WordPress plugins.",
+    "duration": "25 Hours",
+    "rating": "4.8",
+    "original_price": "149",
+    "discount_price": "79",
+    "category": "Development",
+    "overview": "Dive deep into REST routes, Custom Post Types, Meta boxes, and efficient DB patterns.",
+    "syllabus": "Module 1: Setup, Module 2: Custom Tables, Module 3: Cache, Module 4: Clean REST APIs.",
+    "instructor": "Jane Smith",
+    "student_limit": "50",
+    "pdf_url": "https://example.com/syllabus-wp-plugins.pdf"
+  }
+];
